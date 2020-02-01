@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Pmcs Data Automation Test Suite]">
+  <test thread-count="5" name="PMCS Login test(failed)">
+    <classes>
+      <class name="com.usa.runner.MyRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="teardown"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.usa.runner.MyRunner -->
+    </classes>
+  </test> <!-- PMCS Login test(failed) -->
+</suite> <!-- Failed suite [Pmcs Data Automation Test Suite] -->

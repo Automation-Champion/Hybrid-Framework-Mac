@@ -1,0 +1,192 @@
+SQL> connect / as sysdba
+Enter Original Password
+Select username, password from dba_users;
+SQL> alter user hr identified by hr
+
+       
+                                                                            What is Collection in Java
+                                        The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.
+                                Java Collections can achieve all the operations that you perform on a data such as searching, sorting, insertion, manipulation, and deletion.
+                                Java Collection means a single unit of objects. Java Collection framework provides many interfaces (Set, List, Queue, Deque) and classes 
+                                                (ArrayList, Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
+
+                                                                          What is a framework in Java
+                                                                       It provides readymade architecture.
+                                                                  It represents a set of classes and interfaces.
+                                                                               It is optional.
+
+
+
+       Property                              java.util.List                              java.util.Set                                   java.util.Map
+                                       List allows to store duplicate              Set does not allow to store                  Map stores data in form of key-value pair 
+1,    Duplicate elements                   elements in java.                     duplicate elements in java.                    it does not allow to store duplicate keys             
+                                                                                                                                but allows duplicate values in java.
+
+                                    java.util.List is ordered collection      Most of the java.util.Set implementation        Most of the java.util.Map implementation 
+                                    it maintain insertion order in java.      does not maintain insertion order.              does not maintain insertion order.
+                                    order in java.                            HashSet does not maintains insertion            HashMap does not maintains insertion order.
+2,    Insertion order                                                         Thought LinkedHashMap maintains insertion       order of keys in java.
+                                                                              Thought LinkedHashSet maintains insertion       TreeMap is sorted by natural order of keys in java.
+                                                                              order in java.                                  
+                                                                              TreeSet is sorted by natural order in java.
+                                  
+                                    List allows to store many null keys       Most of the Set implementations allow to        Lets look at Map implementations -
+                                    in java.                                  add only one null in java.                      HashMap allows one null key and many null values.
+3,     Null keys                                                              TreeSet and ConcurrentSkipListSet               LinkedHashMap allows one null key and many null values.
+                                                                              does not allow to add null in java.             TreeMap doesn't allow null key but allow many null values.
+                                                                                                                              Hashtable doesn't allow null key or null values.
+                                                                                                                              ConcurrentHashMap doesn't allow null key or null values.
+                                                                                                                              ConcurrentSkipListMap doesn't allow null key or null values.
+
+                                  List implementations provide get method     Set implementations does not provide any        Map implementations does not provide any such get 
+                                  to get element on specific index in java.   such get method to get element on               method to get element on specified index in java.
+4,   Getting element on           ArrayList, Vector, copyOnWriteArrayList     specified index in java.
+      specific index              and LinkedList provides get(int index)
+                                  Method returns element on specified index.
+                                  Get method directly gets element on 
+                                  specified index. Hence, offering O(1)  
+                                  complexity.
+
+                                  ArrayList, LinkedList, Vector,              HashSet, CopyOnWriteArraySet, LinkedHashSet,     HashMap, Hashtable, ConcurrentHashMap,  LinkedHashMap,  TreeMap, 
+                                  CopyOnWriteArrayList classes implements     TreeSet, ConcurrentSkipListSet, EnumSet classes. ConcurrentSkipListMap, 
+5, Implementing classes           List interface in java.                     implements Set interface in java.                IdentityHashMap,WeakHashMap,  EnumMap classes implements
+                                                                                                                               Map interface in java.
+
+
+                                  listIterator method returns listIterator   Set does not provide anything like listIterator.  Map provides three type of iterators -
+                                  to iterate over elements in List in java.   It simply return Iterator in java.               map.keySet().iterator() method returns iterator to 
+                                  listIterator provides additional methods                                                     iterate over keys in HashMap
+6, listIterator                   as compared to iterator like                                                                 map.values().iterator() method returns iterator to 
+                                  hasPrevious(), previous(), nextIndex(),                                                      iterate over keys in HashMap in java.
+                                  previousIndex(), add(E element),                                                             map.entrySet().iterator() method returns iterator 
+                                  set(E element)                                                                               to iterate over keys in HashMap.
+
+
+7, Structure and resizable        List are Resizable-array implementation    Set uses Map for their implementation.            Map uses hashing technique for storing key-value pairs.
+                                  of the java.util.List interface in java.   Hence, structure is map based and resizing 
+                                                                             depends on Map implementation.
+                                                                             Example > HashSet internally uses HashMap.
+
+8, Index based structure         As ArrayList uses array for implementation  Set is not index based structure at all in java.  Map is not index based structure at all in java.
+      /RandomAccess              it is index based structure, hence 
+                                 provides random access to elements.
+
+
+9, unsynchronized                ArrayList, LinkedList                        HashSet, LinkedHashSet, TreeSet, EnumSet          HashMap,  LinkedHashMap,  TreeMap,  IdentityHashMap,
+   implementations                                                                                                              WeakHashMap,  EnumMap  
+
+
+10, synchronized                Vector, CopyOnWriteArrayList                 CopyOnWriteArraySet, ConcurrentSkipListSet         Hashtable, ConcurrentHashMap, ConcurrentSkipListMap, 
+    implementations   
+
+ 
+
+
+
+
+                                                                            String is an immutable.
+                                                                   StringBuffer is a mutable and synchronized.
+                                                             StringBuilder is also mutable but its not synchronized.
+
+                  First lets see the similarities: Both StringBuilder and StringBuffer are mutable. That means you can change the content of them, with in the same location.
+                           Differences: StringBuffer is mutable and synchronized as well. Where as StringBuilder is mutable but not synchronized by default.
+
+                                  Meaning of synchronized (synchronization): When some thing is synchronized, then multiple threads can access, 
+                    and modify it with out any problem or side effect. StringBuffer is synchronized, so you can use it with multiple threads with out any problem.
+
+                             Which one to use when? StringBuilder : When you need a string, which can be modifiable, and only one thread is accessing 
+                          and modifying it. StringBuffer : When you need a string, which can be modifiable, and multiple threads are accessing and modifying it.
+
+                                                  Note : Don't use StringBuffer unnecessarily, i.e., don't use it if only 
+
+
+                                                                    StringBuffer is  synchronized
+                                                                      StringBuffer is  thread-safe
+                                        StringBuffer is  slow (try to write a sample program and execute it, it will take more time than StringBuilder)
+
+
+                                                                  StringBuilder is not synchronized 
+                                                                  StringBuilder is not thread-safe
+                                                     StringBuilder performance is better than StringBuffer.
+
+
+StringBuffer is mutable means one can change the value of the object . The object created through StringBuffer is stored in the heap .
+StringBuffer has the same methods as the StringBuilder , but each method in StringBuffer is synchronized that is StringBuffer is thread safe .
+
+because of this it does not allow two threads to simultaneously access the same method . Each method can be accessed by one thread at a time .
+But being thread safe has disadvantages too as the performance of the StringBuffer hits due to thread safe property . 
+Thus StringBuilder is faster than the StringBuffer when calling the same methods of each class.
+
+StringBuffer value can be changed , it means it can be assigned to the new value . Nowadays its a most common interview question'
+the differences between the above classes . String Buffer can be converted to the string by using toString() method.
+
+StringBuffer demo1 = new StringBuffer(“Hello”) ;
+// The above object stored in heap and its value can be changed .
+demo1=new StringBuffer(“Bye”);
+// Above statement is right as it modifies the value which is allowed in the StringBuffer
+
+
+StringBuilder is same as the StringBuffer , that is it stores the object in heap and it can also be modified . The main difference
+between the StringBuffer and StringBuilder is that StringBuilder is also not thread safe. StringBuilder is fast as it is not thread safe .
+
+StringBuilder demo2= new StringBuilder(“Hello”);
+// The above object too is stored in the heap and its value can be modified
+demo2=new StringBuilder(“Bye”);
+// Above statement is right as it modifies the value which is allowed in the StringBuilder
+
+
+
+
++---Idea about project structure using (Core Java,cucumber With BDD, TestNG & Excel)
++---main
+|   +---java
+|   |   \---com.basepage.Package
+|   |   |---SupperClass.java
+|   |   |
+|   |   \---com.pageFactory.Package
+|   |   |---MasterFageFactory.java
+|   |   |
+|   |   \---com.utili.Package
+|   |   |---Utility.jave
+|   |   |---WaitHelper.java
+|   |   |
+|   |   \---com.listeners.Package
+|   |   |---TestListeners.jave
+|   +---resources
+\---test
+|   +---java
+|   |   \---com.stepdefs.Package
+|   |   |   |---ServiceHooks.java
+|   |   |   |---StepDefinitions.java
+|   |   |---\
+|   |   \---com.runner.Package
+|   |   |---TestRunner.java
+|   |   |
+|   +---resources
+|       \---Features
+|           |---LoginProfile.feature
+|           |---UpdateProfile.feature
+|---|-------|
+|---ExtentReportFolder
+|---+
+|---|
+|---TestDataFolder
+|---+
+|---|
+|---DriverFolder
+|---+
+|---|
+|---logFileFolder
+|---|
+|---pom.xml
+\---+
+ \  |
+  \-testng.xml
+    +---Extra tools Jira, ALM, Github & Jenkins
+
+
+
+
+
+
+                                          

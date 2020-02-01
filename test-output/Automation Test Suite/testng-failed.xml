@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Automation Test Suite]">
+  <listeners>
+    <listener class-name="com.usa.util.Listeners.Reporting"/>
+  </listeners>
+  <test thread-count="5" name="PMCS Login test(failed)">
+    <classes>
+      <class name="com.usa.runner.file.ScenariRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.usa.runner.file.ScenariRunner -->
+      <class name="com.usa.runner.file.ScenarioOutlineRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.usa.runner.file.ScenarioOutlineRunner -->
+      <class name="com.usa.runner.file.CucumberRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- com.usa.runner.file.CucumberRunner -->
+    </classes>
+  </test> <!-- PMCS Login test(failed) -->
+</suite> <!-- Failed suite [Automation Test Suite] -->

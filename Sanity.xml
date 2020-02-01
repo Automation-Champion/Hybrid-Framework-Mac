@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation Test Suite">
+  	<listeners>
+		<listener class-name="com.usa.util.Listeners.Reporting" />
+	</listeners>  
+	<test name="PMCS Login test">
+		<classes>
+			 <class name="com.usa.runner.file.ScenariRunner"/>
+ 			  <class name="com.usa.runner.file.ScenarioOutlineRunner"/> 
+		        <class name="com.usa.runner.file.CucumberRunner"/>   
+		</classes>
+	</test>
+</suite>
+
+
