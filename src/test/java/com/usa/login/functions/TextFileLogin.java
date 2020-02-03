@@ -57,5 +57,6 @@ public class TextFileLogin {
 		driver.findElement(By.xpath("//*[@id='signin_password']")).sendKeys(prop.getProperty("textPassword"));
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//*[@id='signin_submit']")).click();
+		driver.quit();
 	}
 }

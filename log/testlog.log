@@ -288,3 +288,34 @@
 2020-02-01 14:20:20,193 - PMCS -INFO - ******** started login*********
 2020-02-01 14:20:24,436 - PMCS -INFO - ******** Login SuccessFully*********
 2020-02-01 14:20:27,438 - PMCS -INFO - ********closing browser********
+2020-02-02 13:32:46,347 - PMCS -INFO - ******** I am a chrome browser*********
+2020-02-02 13:32:47,629 - PMCS -INFO - ******** Opening URL*********
+2020-02-02 13:32:49,574 - PMCS -INFO - ******** Providing login details*********
+2020-02-02 13:32:49,884 - PMCS -INFO - ******** started login*********
+2020-02-02 13:33:13,830 - PMCS -INFO - ******** Click on logout link*********
+2020-02-02 13:33:17,868 - PMCS -INFO - ******** Login Passed*********
+2020-02-02 13:33:20,887 - PMCS -INFO - ********closing browser********
+2020-02-02 13:33:25,780 - PMCS -INFO - ******** I am a chrome browser*********
+2020-02-02 13:33:26,944 - PMCS -INFO - ******** Opening URL*********
+2020-02-02 13:33:29,087 - PMCS -INFO - ******** Click on my account *********
+2020-02-02 13:33:29,917 - PMCS -INFO - ******** Providing user name details*********
+2020-02-02 13:33:30,141 - PMCS -INFO - ******** Providing user password details*********
+2020-02-02 13:33:30,252 - PMCS -INFO - ******** started login*********
+2020-02-02 13:33:34,643 - PMCS -INFO - ******** Login SuccessFully*********
+2020-02-02 13:33:37,645 - PMCS -INFO - ********closing browser********
+2020-02-02 13:33:41,206 - PMCS -INFO - ******** I am a chrome browser*********
+2020-02-02 13:33:42,427 - PMCS -INFO - ******** Opening URL*********
+2020-02-02 13:33:44,387 - PMCS -INFO - ******** Click on my account *********
+2020-02-02 13:33:45,615 - PMCS -INFO - ******** Providing user name details*********
+2020-02-02 13:33:45,838 - PMCS -INFO - ******** Providing user password details*********
+2020-02-02 13:33:45,952 - PMCS -INFO - ******** started login*********
+2020-02-02 13:33:50,091 - PMCS -INFO - ******** Login SuccessFully*********
+2020-02-02 13:33:53,096 - PMCS -INFO - ********closing browser********
+2020-02-02 13:33:57,064 - PMCS -INFO - ******** I am a chrome browser*********
+2020-02-02 13:33:58,235 - PMCS -INFO - ******** Opening URL*********
+2020-02-02 13:34:00,200 - PMCS -INFO - ******** Click on my account *********
+2020-02-02 13:34:01,126 - PMCS -INFO - ******** Providing user name details*********
+2020-02-02 13:34:01,334 - PMCS -INFO - ******** Providing user password details*********
+2020-02-02 13:34:01,449 - PMCS -INFO - ******** started login*********
+2020-02-02 13:34:05,601 - PMCS -INFO - ******** Login SuccessFully*********
+2020-02-02 13:34:08,606 - PMCS -INFO - ********closing browser********

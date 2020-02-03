@@ -9,8 +9,11 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -52,14 +55,25 @@ public class ExcelandTestNGDatapProviderLogin {
 		System.out.println("data returning");
 		return data;
 	}
+
 	@DataProvider
 	public Object[][] getExcelTestData() throws FileNotFoundException {
 		Object data[][] = getTestData(sheetName);
 		return data;
 	}
-	public void elementOfWebpage(String emeil, String password){
-		driver.findElement(By.xpath("//*[@id='signin_email']")).sendKeys(emeil);
-		driver.findElement(By.xpath("//*[@id='signin_password']")).sendKeys(password);
+
+	public void elementOfWebpage(String emeil, String password) {
+
+		// How to send key using Action class
+		Actions actions = new Actions(driver);
+		WebElement element = driver.findElement(By.xpath("//*[@id='signin_email']"));
+		String text = emeil;
+		actions.sendKeys(element, text).perform();
+
+		// How to send key using Java script Executor class
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement elem = driver.findElement(By.xpath("//*[@id='signin_password']"));
+		js.executeScript("arguments[0].setAttribute('value', '" + password + "')", elem);
 	}
 
 	@Test(dataProvider = "getExcelTestData")
@@ -69,10 +83,11 @@ public class ExcelandTestNGDatapProviderLogin {
 		driver.get("https://www.zoopla.co.uk/signin/");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		elementOfWebpage(UserName, Password);
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id='signin_submit']")).click();
+		driver.quit();
 	}
 
 }
