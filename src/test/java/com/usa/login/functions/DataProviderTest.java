@@ -1,9 +1,9 @@
-package com.usa.testNG;
+package com.usa.login.functions;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -18,10 +18,9 @@ public class DataProviderTest {
 	@Test(dataProvider = "Authentication")
 	public void test(String sUsername, String sPassword) {
 		System.setProperty("webdriver.chrome.driver", "/Users/mohammedalam/chromedriver");
-		driver = new SafariDriver();
+		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get("http://shop.demoqa.com/my-account/");
-		driver.manage().window().maximize();
 		driver.findElement(By.id("username")).sendKeys(sUsername);
 		driver.findElement(By.id("password")).sendKeys(sPassword);
 		driver.findElement(By.xpath("//*[@value='Log in']")).click();

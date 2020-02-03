@@ -2,10 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<test name="ToolsQA">
-		<parameter name="sUsername" value="testuser_1" />
-		<parameter name="sPassword" value="Test@123" />
+		<parameter name="sUsername" value="alam" />
+		<parameter name="sPassword" value="SAYEDawan2008" />
 		<classes>
 			<class name="com.usa.testNG.DataProviderTest" />
+			<class name="com.usa.login.functions.DataProviderTest" />
 		</classes>
 	</test>
 </suite>
