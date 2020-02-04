@@ -1,5 +1,6 @@
 package com.usa.login.functions;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.List;
@@ -13,10 +14,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 
 public class SeleniumLogin {
 	public static WebDriver driver;
-	static String textFile;
+	static FileReader textfile;
 
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws Throwable {
@@ -78,24 +80,26 @@ public class SeleniumLogin {
 				String output = driver.findElement(By.xpath("//*[@class='a-price']")).getText();
 				File DestFile = new File("Alam.txt");
 				FileUtils.writeStringToFile(DestFile, output);
-				textFile = output;
-				System.out.println("Selected iphone price : " + output);
+				System.out.println("Selected iphone price : " + DestFile);
 				break;
 			}
 		}
 
 		// How to verify text form web page
-		FileReader fr = new FileReader("/Users/mohammedalam/eclipse-workspace/Hybrid-Framework/Alam.txt");
-		int i;
-		while ((i = fr.read()) != -1)
-			System.out.print((char) i);
-
+		File file = new File("/Users/mohammedalam/eclipse-workspace/Hybrid-Framework/Alam.txt");
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		String st;
+		while ((st = br.readLine()) != null)
+			System.out.println(st);
+		
 		WebElement verify = driver.findElement(By.id("priceblock_ourprice"));
-		if (verify == fr) {
+		Assert.assertEquals(verify, st);
+		System.out.println("Expected Iphone price : " + verify.getText());
+	/*	if (verify.equals(st)) {
 			System.out.println("Expected Iphone price : " + verify.getText());
 		} else {
 			System.out.println(">>>>>>>Test fail<<<<<<");
-		}
+		}*/
 
 		// How to mouse Hover with java Script
 		WebElement log = driver.findElement(By.id("nav-link-accountList"));
