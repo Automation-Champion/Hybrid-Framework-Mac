@@ -75,31 +75,16 @@ public class SeleniumLogin {
 		// How to select dynamic element and click the value as our requirement
 		for (int i = 0; i < price.size(); i++) {
 			if (i > 5) {
-				System.out.println("Selected number : " + i + " And Iphone price : " + price.get(i).getText());
+				System.out.println("Selected number : " + i);
+				System.out.println("Actual iphone price : " + price.get(i).getText());
 				price.get(i).click();
-				String output = driver.findElement(By.xpath("//*[@class='a-price']")).getText();
-				File DestFile = new File("Alam.txt");
-				FileUtils.writeStringToFile(DestFile, output);
-				System.out.println("Selected iphone price : " + DestFile);
 				break;
 			}
 		}
 
 		// How to verify text form web page
-		File file = new File("/Users/mohammedalam/eclipse-workspace/Hybrid-Framework/Alam.txt");
-		BufferedReader br = new BufferedReader(new FileReader(file));
-		String st;
-		while ((st = br.readLine()) != null)
-			System.out.println(st);
-		
 		WebElement verify = driver.findElement(By.id("priceblock_ourprice"));
-		Assert.assertEquals(verify, st);
 		System.out.println("Expected Iphone price : " + verify.getText());
-	/*	if (verify.equals(st)) {
-			System.out.println("Expected Iphone price : " + verify.getText());
-		} else {
-			System.out.println(">>>>>>>Test fail<<<<<<");
-		}*/
 
 		// How to mouse Hover with java Script
 		WebElement log = driver.findElement(By.id("nav-link-accountList"));
