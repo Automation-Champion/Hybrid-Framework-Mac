@@ -1,8 +1,11 @@
 package com.usa.login.functions;
 
-
+import java.io.File;
+import java.io.FileReader;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -11,11 +14,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-
 public class SeleniumLogin {
 	public static WebDriver driver;
+	static String textFile;
 
-	public static void main(String[] args) {
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) throws Throwable {
 		System.setProperty("webdriver.chrome.driver", "/Users/mohammedalam/chromedriver");
 		driver = new ChromeDriver();
 		driver.get("https://www.amazon.com/");
@@ -54,7 +58,7 @@ public class SeleniumLogin {
 			buttonClick.click();
 			break;
 		}
-        // How to enter text in search box and hit enter
+		// How to enter text in search box and hit enter
 		WebElement textbox = driver.findElement(By.id("twotabsearchtextbox"));
 		textbox.sendKeys("Iphone");
 		textbox.sendKeys(Keys.ENTER);
@@ -71,12 +75,27 @@ public class SeleniumLogin {
 			if (i > 5) {
 				System.out.println("Selected number : " + i + " And Iphone price : " + price.get(i).getText());
 				price.get(i).click();
+				String output = driver.findElement(By.xpath("//*[@class='a-price']")).getText();
+				File DestFile = new File("Alam.txt");
+				FileUtils.writeStringToFile(DestFile, output);
+				textFile = output;
+				System.out.println("Selected iphone price : " + output);
 				break;
 			}
 		}
-       // How to verify text form web page
+
+		// How to verify text form web page
+		FileReader fr = new FileReader("/Users/mohammedalam/eclipse-workspace/Hybrid-Framework/Alam.txt");
+		int i;
+		while ((i = fr.read()) != -1)
+			System.out.print((char) i);
+
 		WebElement verify = driver.findElement(By.id("priceblock_ourprice"));
-		System.out.println("Iphone price : " + verify.getText());
+		if (verify == fr) {
+			System.out.println("Expected Iphone price : " + verify.getText());
+		} else {
+			System.out.println(">>>>>>>Test fail<<<<<<");
+		}
 
 		// How to mouse Hover with java Script
 		WebElement log = driver.findElement(By.id("nav-link-accountList"));
@@ -89,7 +108,7 @@ public class SeleniumLogin {
 		WebElement locators = driver
 				.findElement(By.xpath("//*[@id='nav-al-your-account']//*[contains(text(),'Sign Out')]"));
 		js.executeScript("arguments[0].click();", locators);
-
+		driver.quit();
 	}
 
 }
