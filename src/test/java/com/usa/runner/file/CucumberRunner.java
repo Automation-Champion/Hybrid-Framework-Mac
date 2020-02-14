@@ -4,7 +4,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(
-		features = { "/Users/mohammedalam/eclipse-workspace/Hybrid-Framework/Fetatures/Login.feature" },
+		features = { ".//Fetatures/" },
 		glue = "com.usa.login.functions", 
 		dryRun = false, 
 		monochrome = true, 
